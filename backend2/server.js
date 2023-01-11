@@ -38,8 +38,8 @@ app.get('/professional', (req, res) => {
 app.listen(port, () => console.log('listening on port ' + port));
 
 async function dataBaseConnect() {
-    const uri = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.lxjsemp.mongodb.net/?retryWrites=true&w=majority`;
-    const client = new MongoClient(uri);
+    const uri = "";
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
     try {
         await client.connect();
